@@ -10,7 +10,7 @@ wget -N "https://storage.googleapis.com/golang/go1.7.5.linux-amd64.tar.gz" -P /t
 tar -C /usr/local -xzf /tmp/go1.7.5.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
-# Install Terraform Xen Provider
+# Compile and install Terraform Xen Provider
 rm -fR /tmp/gocode
 mkdir -p /tmp/gocode/src/github.com/amfranz/
 git clone "https://github.com/amfranz/terraform-provider-xenserver" /tmp/gocode/src/github.com/amfranz/terraform-provider-xenserver
