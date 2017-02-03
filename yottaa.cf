@@ -1,0 +1,122 @@
+variable "xen_templates" {
+  default = {
+    a      = "CentOS6-1"
+    b      = "CentOS6-2"
+    c      = "CentOS6-3"
+  }
+}
+
+variable "tpu_count" { default = 3 }
+variable "lb_count" { default = 2 }
+variable "kafka_count" { default = 5 }
+variable "es_master_count" { default = 3 }
+variable "es_data_count" { default = 3 }
+variable "rabbitmq_count" { default = 2 }
+
+
+variable "ssh_username" {default = "yadmin"}
+variable "dns_domain" { default = "office-2.stage" }
+
+provider "xen" {
+  host = "${var.h
+  region = "${var.region}"
+}
+
+module "platform-tpu-nodes" {
+  count = "${var.tpu_count}"
+}
+
+module "platform-lb-nodes" {
+  count = "${var.lb_count}"
+}
+
+module "platform-mongo-nodes" {
+  count = "${var.plt_mongo_count}"
+}
+
+module "platform-router-api-nodes" {
+  count = "${var.router_api_count}"
+}
+
+module "platform-cassandra-nodes" {
+  count = "${var.plt_cassandra_count}"
+}
+
+module "platform-rabbitmq-nodes" {
+  count = "${var.rabbitmq_count}"
+}
+
+module "platform-waf-nodes" {
+  count = "${var.waf_count}"
+}
+
+module "portal-web-nodes" {
+  count = "${var.portal_web_count}"
+}
+
+module "portal-mongo-nodes" {
+  count = "${var.portal_mongo_count}"
+}
+
+module "portal-postgres-nodes" {
+  count = "${var.portal_postgres_count}"
+}
+
+module "portal-redis-nodes" {
+  count = "${var.portal_redis_count}"
+}
+
+module "ta-es-master-nodes" {
+  count = "${var.ta_es_master_count}"
+}
+
+module "ta-es-data-nodes" {
+  count = "${var.ta_es_data_count}"
+}
+
+module "ta-es-monitor-nodes" {
+  count = "${var.ta_es_monitor_count}"
+}
+
+module "ta-kafka-nodes" {
+  count = "${var.ta_kafka_count}"
+}
+
+module "ta-cassandra-nodes" {
+  count = "${var.ta_cassandra_count}"
+}
+
+module "ta-services-nodes" {
+  count = "${var.ta_services_count}"
+}
+
+module "ta-nodes" {
+  count = "${var.ta_count}"
+}
+
+module "ta-billing-nodes" {
+  count = "${var.ta_billing_count}"
+}
+
+module "ta-es-indexer-nodes" {
+  count = "${var.ta_es_indexer_count}"
+}
+
+module "ta-cdn-billing-nodes" {
+  count = "${var.ta_cdn_billing_count}"
+}
+
+module "ta-postgres-nodes" {
+  count = "${var.ta_postgres_count}"
+}
+
+module "ta-monitoring-nodes" {
+  count = "${var.ta_monitoring_count}"
+}
+
+module "ta-qa-nodes" {
+  count = "${var.ta_qa_count}"
+}
+
+
+
